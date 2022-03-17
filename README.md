@@ -19,6 +19,7 @@ rails css:install:bootstrap
 ```
 rails g controller home index
 ```
+- Add app/views/shared/\_header.html.erb
 
 
 * System dependencies
