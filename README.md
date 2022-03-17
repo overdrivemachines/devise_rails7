@@ -36,6 +36,8 @@ rails g devise:install
 ```
 rails g devise user
 ```
+- Add :confirmable, :trackable to User.rb and uncomment related fields in the migration file
+-
 
 * System dependencies
 
