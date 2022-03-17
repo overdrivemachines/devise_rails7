@@ -13,6 +13,11 @@ rails 7.0.2.3
 - Install Bootstrap:
 ```
 rails css:install:bootstrap
+./bin/importmap pin bootstrap
+```
+- Add controller and action:
+```
+rails g controller home index
 ```
 
 
