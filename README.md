@@ -9,7 +9,7 @@ rails 7.0.2.3
 
 # Steps
 - Add gems "annotate" and "rails-erd" in development group
-- Add gem "cssbundling-rails"
+- Add gem "cssbundling-rails", "devise"
 - Install Bootstrap:
 ```
 rails css:install:bootstrap
@@ -20,7 +20,22 @@ rails css:install:bootstrap
 rails g controller home index
 ```
 - Add app/views/shared/\_header.html.erb
+- Add gem "devise"
+- Run generator:
+```
+rails g devise:install
+```
 
+- Add to development.rb: `config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }`
+- Add to application.html.erb:
+```html
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+```
+- Create model:
+```
+rails g devise user
+```
 
 * System dependencies
 
