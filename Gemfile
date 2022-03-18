@@ -30,6 +30,7 @@ group :development do
   gem "web-console"
   gem "annotate"
   gem "rails-erd"
+  gem "letter_opener" # Preview emails in browser
   # gem "rack-mini-profiler"
   # gem "spring"
 end
