@@ -38,7 +38,16 @@ rails g devise user
 ```
 - Add :confirmable, :trackable to User.rb and uncomment related fields in the migration file
 - Add "letter_opener" gem to Gemfile
-- In \_header.html.erb add sign in and sign out links
+- In \_header.html.erb add sign in and sign out links:
+```
+<%= link_to "Sign In", new_user_session_path %>
+<%= link_to "Sign Out", destroy_user_session_path, data: { turbo_method: :delete } %>
+```
+
+- Add views
+```
+rails g devise:views users
+```
 
 * System dependencies
 
