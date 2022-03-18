@@ -14,10 +14,15 @@
             Settings
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <% if user_signed_in? %>
+              <li>
+                <%= link_to "Sign Out", destroy_user_session_path, class: "dropdown-item", data: { turbo_method: :delete } %>
+              </li>
+            <% else %>
+              <li>
+                <%= link_to "Sign In", new_user_session_path, class: "dropdown-item" %>
+              </li>
+            <% end %>
           </ul>
         </li>
       </ul>
