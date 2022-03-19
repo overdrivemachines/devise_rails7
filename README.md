@@ -49,6 +49,14 @@ rails g devise user
 rails g devise:views users
 rails g devise:controllers users
 ```
+- Add sessions, passwords and registrations in the routes.rb:
+```rb
+devise_for :users, controllers: {
+  sessions: 'users/sessions',
+  passwords: 'users/passwords',
+  registrations: 'users/registrations'
+}
+```
 
 * System dependencies
 
