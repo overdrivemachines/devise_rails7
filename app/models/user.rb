@@ -26,4 +26,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :confirmable, :trackable
+
+  private
+  def after_confirmation
+    WelcomeMailer.send_greetings_notification(self).deliver_later
+  end
 end
