@@ -60,7 +60,13 @@ devise_for :users, controllers: {
 ```
 
 - Style necessary devise view templates
+- Disable turbo/hotwire for app/views/users/passwords/new.html.erb:
+`html: { method: :post, "data-turbo": "false" }`
 
+- Create a new mailer
+```
+rails g mailer welcome send_greetings_notification
+```
 
 
 * System dependencies
