@@ -55,8 +55,13 @@ devise_for :users, controllers: {
   sessions: 'users/sessions',
   passwords: 'users/passwords',
   registrations: 'users/registrations'
+  confirmations: 'users/confirmations'
 }
 ```
+
+- Style necessary devise view templates
+
+
 
 * System dependencies
 
