@@ -3,6 +3,9 @@
 Rails 7 example app with Devise. <br>
 Video: https://www.youtube.com/watch?v=f6NPdVJKbaY
 
+# ERD Diagram
+![ERD Diagram](erd.png)
+
 # Ruby version
 ruby 3.1.1 <br>
 rails 7.0.2.3
@@ -67,6 +70,16 @@ devise_for :users, controllers: {
 ```
 rails g mailer welcome send_greetings_notification
 ```
+- Customize:
+  - app/mailers/welcome_mailer.rb
+  - app/views/welcome_mailer/send_greetings_notification.html.erb
+- Call mailer from app/models/user.rb
+
+- Add fields to User model:
+```
+rails g migration add_custom_attr_to_users
+```
+
 
 
 * System dependencies
