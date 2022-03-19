@@ -44,9 +44,10 @@ rails g devise user
 <%= link_to "Sign Out", destroy_user_session_path, data: { turbo_method: :delete } %>
 ```
 
-- Add views
+- Add views and controllers
 ```
 rails g devise:views users
+rails g devise:controllers users
 ```
 
 * System dependencies
