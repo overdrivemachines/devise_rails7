@@ -4,7 +4,9 @@
       <h2 class="card-title text-center">Forgot your password?</h2>
     </div>
     <div class="card-body">
-      <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+      <!-- https://stackoverflow.com/questions/36214082/rails-devise-nil-location-provided-cant-build-uri-on-password-reset
+      Disable turbo/hotwire for this form -->
+      <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, "data-turbo": "false" }) do |f| %>
         <%= render "users/shared/error_messages", resource: resource %>
 
         <div class="form-group">
