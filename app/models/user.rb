@@ -32,6 +32,12 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :confirmable, :trackable
 
+  validates :username, presence: true, uniqueness: true
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :contact_number, presence: true
+  validates :address, presence: true
+
   private
   def after_confirmation
     WelcomeMailer.send_greetings_notification(self).deliver_later
