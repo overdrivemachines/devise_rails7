@@ -79,6 +79,27 @@ rails g mailer welcome send_greetings_notification
 ```
 rails g migration add_custom_attr_to_users
 ```
+- After editing the generated migration file, run `rails db:migrate`
+
+- In registrations_controller.rb, permit extra params in configure_sign_up_params and configure_account_update_params
+- In devise.rb add:
+```rb
+config.authentication_keys = [:login]
+```
+- In sessions/new.html.erb add replace email field to `f.text_field :login`
+
+- In user.rb add validations and the following function:
+```rb
+def self.find_for_database_authentication(warden_condition)
+  conditions = warden_condition.dup
+  if (login = conditions.delete(:login))
+    where(conditions.to_h).where(["lower(username) = :value OR
+      lower(email) = :value", { value: login.downcase }]).first
+  elsif conditions.has_key?(:username) || conditions.has_key?(:email)
+    where(conditions.to_h).first
+  end
+end
+```
 
 
 
